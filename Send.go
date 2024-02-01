@@ -8,7 +8,7 @@ import "encoding/json"
 //	...data
 // 	}
 //}
-func Send(ctx context, data map[string]interface{}) error {
+func Send(ctx context, data interface{}) error {
 
 	message, err := json.Marshal(&responseMessage{Response: data})
 	if err != nil {
