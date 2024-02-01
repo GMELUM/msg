@@ -7,12 +7,13 @@ type errorMessage struct {
 }
 
 type responseMessage struct {
-	Response map[string]interface{} `json:"response"`
+	Response interface{} `json:"response"`
 }
 
 type errorData struct {
-	Code    int    `json:"code"`
-	Message string `json:"message"`
+	Code     int    `json:"code"`
+	Message  string `json:"message"`
+	Critical bool   `json:"critical"`
 }
 
 type errorMessageBadRequest struct {
@@ -23,6 +24,7 @@ type errorDataBadRequest struct {
 	Code        int    `json:"code"`
 	Message     string `json:"message"`
 	Description string `json:"description"`
+	Critical    bool   `json:"critical"`
 }
 
 func serialize(data errorData) []byte {
