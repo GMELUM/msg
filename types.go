@@ -13,7 +13,7 @@ type responseMessage struct {
 type errorData struct {
 	Code     int    `json:"code"`
 	Message  string `json:"message"`
-	Critical bool   `json:"critical"`
+	Critical bool   `json:"critical,omitempty"`
 }
 
 type errorMessageBadRequest struct {
@@ -24,7 +24,7 @@ type errorDataBadRequest struct {
 	Code        int    `json:"code"`
 	Message     string `json:"message"`
 	Description string `json:"description"`
-	Critical    bool   `json:"critical"`
+	Critical    bool   `json:"critical,omitempty"`
 }
 
 func serialize(data errorData) []byte {
