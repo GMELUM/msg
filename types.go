@@ -23,7 +23,7 @@ type errorMessageBadRequest struct {
 type errorDataBadRequest struct {
 	Code        int    `json:"code"`
 	Message     string `json:"message"`
-	Description string `json:"description"`
+	Description string `json:"description,omitempty"`
 	Critical    bool   `json:"critical,omitempty"`
 }
 
