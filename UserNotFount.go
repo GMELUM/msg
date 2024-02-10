@@ -2,7 +2,7 @@ package msg
 
 var errorUserNotFound = serialize(errorData{
 	Code:     22,
-	Message:  "The user is missing from the store database.",
+	Message:  "The user is missing from the store database",
 	Critical: true,
 })
 
