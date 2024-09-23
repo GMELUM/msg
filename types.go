@@ -3,14 +3,14 @@ package msg
 import "encoding/json"
 
 type errorMessage struct {
-	Error errorData `json:"error"`
+	Error ErrorData `json:"error"`
 }
 
 type responseMessage struct {
 	Response interface{} `json:"response"`
 }
 
-type errorData struct {
+type ErrorData struct {
 	Code     int    `json:"code"`
 	Message  string `json:"message"`
 	Critical bool   `json:"critical,omitempty"`
@@ -27,7 +27,7 @@ type errorDataBadRequest struct {
 	Critical    bool   `json:"critical,omitempty"`
 }
 
-func serialize(data errorData) []byte {
+func serialize(data ErrorData) []byte {
 	message, err := json.Marshal(&errorMessage{Error: data})
 	if err != nil {
 		return []byte{}
